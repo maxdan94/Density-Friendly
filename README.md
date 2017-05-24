@@ -26,8 +26,8 @@ If you also want the statistics (upperbound density and size of the found subgra
 
 It will be a bit slower.
 
-"./approxDF ncpu iter net.txt rates.txt pavafit.txt cuts.txt"  
-"./exactDF ncpu iter net.txt rates.txt pavafit.txt cuts.txt exact.txt"
+"./approxDF nthreads iter net.txt rates.txt pavafit.txt cuts.txt"  
+"./exactDF nthreads iter net.txt rates.txt pavafit.txt cuts.txt exact.txt"
 
 - nthreads is the number of threads to use
 - iter is the number of iterations over all edges to perform
