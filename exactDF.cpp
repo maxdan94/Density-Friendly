@@ -42,7 +42,7 @@ Some information will be printed in the terminal.
 #include <omp.h>
 #include <time.h>
 
-#define NLINKS 100000000 //maximum number of edges for memory allocation, will increase if needed
+#define NLINKS 500000000 //maximum number of edges for memory allocation, will increase if needed
 
 typedef struct {
 	unsigned s;
@@ -189,16 +189,14 @@ void freeoptim(optim *opt){
 
 //used for quicksort (greatest hit in CS before this algorithm)
 static int compare_nodes(void const *a, void const *b){
-	node const *pa = a;
-	node const *pb = b;
-	if ((*pa).r<=(*pb).r)
+	if (((node*)a)->r <= ((node*)b)->r)
 		return 1;
 	return -1;
 }
 //used for quicksort (greatest hit in CS before this algorithm)
 static int compare_edges(void const *a, void const *b){
-	edge const *pa = a;
-	edge const *pb = b;
+	edge *pa = (edge *)a;
+	edge *pb = (edge *)b;
 	if ((*pa).s>(*pb).s)
 		return 1;
 	if ((*pa).s<(*pb).s)

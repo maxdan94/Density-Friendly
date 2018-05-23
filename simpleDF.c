@@ -15,7 +15,7 @@ To execute:
 "./simpleDF edgelist.txt iter densest.txt decomp.txt".
 "edgelist.txt" should contain the graph: one edge on each line separated by a space.
 "iter" is the number of iterations, e.g. "100".
-"res.txt" contains the found subgraph: "upperbound density size node1 node2 node3...". "upperbound" is an upperbound on the maximum density
+"densest.txt" contains the found subgraph: "upperbound density size node1 node2 node3...". "upperbound" is an upperbound on the maximum density
 "decomp.txt" contains on each line a node and it's density-score
 
 If you also want the statistics (upperbound density and size of the found subgraph at each iteration) type:
@@ -31,7 +31,7 @@ It will be a bit slower, but still fast ;).
 #include <math.h>
 #include <stdbool.h>
 
-#define NLINKS 100000000 //maximum number of edges for memory allocation, will increase if needed
+#define NLINKS 500000000 //maximum number of edges for memory allocation, will increase if needed
 
 
 typedef struct {

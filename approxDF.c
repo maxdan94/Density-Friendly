@@ -11,7 +11,7 @@ To compile:
 gcc approxDF.c -fopenmp -o approxDF -O9
 
 To execute:
-./approxDF ncpu iter net.txt rates.txt pavafit.txt cuts.txt
+./approxDF nthreads iter net.txt rates.txt pavafit.txt cuts.txt
 
 - nthreads is the number of threads to use
 - iter is the number of iterations over all edges to perform
@@ -28,7 +28,7 @@ Some information will be printed in the terminal.
 #include <omp.h>
 #include <time.h>
 
-#define NLINKS 2000000000//25690705119//maximum number of edges for memory allocation, will increase if needed
+#define NLINKS 500000000//25690705119//maximum number of edges for memory allocation, will increase if needed
 
 typedef struct {
 	unsigned s;
@@ -64,7 +64,6 @@ optim* readedgelist(char* edgelist){
 	unsigned long long e1=NLINKS;
 	optim *opt=(optim*)malloc(sizeof(optim));
 	FILE *file;
-
 	opt->n=0;
 	opt->e=0;
 	file=fopen(edgelist,"r");
@@ -495,7 +494,7 @@ int main(int argc,char** argv){
 	printf("- Time = %ldh%ldm%lds\n",(t2-t1)/3600,((t2-t1)%3600)/60,((t2-t1)%60));
 
 	err=error(fit);
-	printf("- error for the weak approximation:\n");
+	printf("- error for the weak approximation (i.e. without checking whether the cuts are correct):\n");
 	printf("- additive (densest,max,average) = %e %e %e\n",err[1],err[3],err[5]);
 	printf("- multiplicative (densest,max,average) = %e %e %e\n",err[0],err[2],err[4]);
 	printf("- Overall time = %ldh%ldm%lds\n",(t2-t0)/3600,((t2-t0)%3600)/60,((t2-t0)%60));
@@ -512,7 +511,7 @@ int main(int argc,char** argv){
 	printf("- Time = %ldh%ldm%lds\n",(t2-t1)/3600,((t2-t1)%3600)/60,((t2-t1)%60));
 
 	err=error(fit2);
-	printf("- error for the strong approximation:\n");
+	printf("- error for the strong approximation (i.e. taking only the correct cuts):\n");
 	printf("- additive (densest,max,average) = %e %e %e\n",err[1],err[3],err[5]);
 	printf("- multiplicative (densest,max,average) = %e %e %e\n",err[0],err[2],err[4]);
 	printf("- Overall time = %ldh%ldm%lds\n",(t2-t0)/3600,((t2-t0)%3600)/60,((t2-t0)%60));
