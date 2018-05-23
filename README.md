@@ -1,6 +1,6 @@
 # Info:
 
-Codes to compute the density-friendly decomposition [1] and the densest subgraph in large sparse graphs such as described in [2].
+Codes to compute the (exact and approximate) density-friendly decomposition [1] and the densest subgraph in large sparse graphs such as described in [2].
 
 [1] N. Tatti and A. Gionis.  
 Density-friendly graph decomposition.  
