@@ -4,7 +4,7 @@ Codes to compute the density-friendly decomposition [1] and the densest subgraph
 
 [1] N. Tatti and A. Gionis.  
 Density-friendly graph decomposition.  
-Proceedings of the 24th International Conference on World Wide Web (2015).
+In Proceedings of the 24th International Conference on World Wide Web (2015).
 
 [2] M. Danisch, T. H. H. Chan and M. Sozio.  
 Large Scale Density-friendly Graph Decomposition via Convex Programming.  
