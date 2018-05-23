@@ -6,7 +6,8 @@ Codes to compute the (exact and approximate) density-friendly decomposition [1] 
 Density-friendly graph decomposition.  
 In Proceedings of the 24th International Conference on World Wide Web (2015).
 
-[2] M. Danisch, T. H. H. Chan and M. Sozio.  
+[2] https://papers-gamma.link/paper/7  
+M. Danisch, T. H. H. Chan and M. Sozio.  
 Large Scale Density-friendly Graph Decomposition via Convex Programming.  
 In Proceedings of the 26th International Conference on World Wide Web (2017).
 
