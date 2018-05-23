@@ -37,10 +37,12 @@ It will be a bit slower.
 - nthreads is the number of threads to use
 - iter is the number of iterations over all edges to perform
 - net.txt should contain the graph (one edge on each line: 2 unsigned separated by a space)
-- rates.txt will contain the density value for each node
+- rates.txt will contain the density value for each node (nodeID and density-value on each line, nodes are sorted in non-increasing order of density value)
 - pavafit.txt will contain the profile given by the PAVA fit, that is the week approximation of the density-friendly ("size density density-upperbound" on each line)
 - cuts.txt will contain the profile given by correct cuts, that is the strong approximation of the density-friendly ("size density density-upperbound" on each line)
 - exact.txt will contain the exact density-friendly ("size density" of each subgraph on each line, not necesarily in decreasing order of density
+
+Note that the nodes in each subgraph (in the files "pavafit.txt", "cuts.txt" and "exact.txt") can be recovered using the ranking of the nodes in "rates.txt" and the values "size".
 
 Some information will be printed in the terminal.
 
