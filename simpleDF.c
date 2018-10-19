@@ -19,7 +19,7 @@ To execute:
 "decomp.txt" contains on each line a node and it's density-score
 
 If you also want the statistics (upperbound density and size of the found subgraph at each iteration) type:
-"./ds edgelist.txt iter densest.txt "decomp.txt" stat.txt".
+"./ds edgelist.txt iter densest.txt decomp.txt stat.txt".
 "stat.txt" will contain these statistics in the following format: "iteration density size upperbound".
 It will be a bit slower, but still fast ;).
 
