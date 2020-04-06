@@ -480,7 +480,7 @@ typedef adjacency_list < vecS, vecS, directedS,
 	    property < edge_residual_capacity_t, double,
 	    property < edge_reverse_t, Traits::edge_descriptor > > > > Graph; //the associated properties of the ajacency_list
 
-Traits::edge_descriptor AddEdge(Traits::vertex_descriptor &v1, Traits::vertex_descriptor &v2, property_map < Graph, edge_reverse_t >::type &rev, const double capacity, Graph &g) {
+void AddEdge(Traits::vertex_descriptor &v1, Traits::vertex_descriptor &v2, property_map < Graph, edge_reverse_t >::type &rev, const double capacity, Graph &g) {
   Traits::edge_descriptor e1 = add_edge(v1, v2, g).first;
   Traits::edge_descriptor e2 = add_edge(v2, v1, g).first;
   put(edge_capacity, g, e1, capacity);
